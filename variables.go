@@ -7,6 +7,22 @@ import (
 
 const s string = "constant"
 
+var foo int = 123 // this is declared at the package level. at this level, variables can only be declared like this.
+// cant use abc := 99 syntax here
+
+// go allows us to group our declarations in a block like below.
+
+var (
+  actorName string = "Elisabeth Sladen"
+  companion string = "Sarah Jane Smith"
+  doctorNumber int = 3
+  season int = 11
+)
+
+var (
+  counter int = 0
+)
+
 func main() {
   // var a = "initial"
   var a string = "initial"
@@ -32,8 +48,11 @@ func main() {
   fmt.Println(i)
   var j int = 42
   fmt.Println(j)
-  k := 23 // drawback of this style is that you cant control the type of variable too finely. Like you cant ever declare float32
+  k := 23.0 // drawback of this style is that you cant control the type of variable too finely. Like you cant ever declare float32
           // it will always be float64. 
   fmt.Println(k)
+  // below %v stands for value, %T for type and Printf() allows us to format and lets us use %v and %T
+  fmt.Printf("%v, %T", k, k) // 23.0, float64
+  fmt.Printf("%v, %T", i, i) // 42, int
 
 }

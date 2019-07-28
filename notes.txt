@@ -1,0 +1,6 @@
+- if you have a variable at a package level, and it is lowercase then it's scoped to the package. any file in the same package
+can access that variable.
+if it's uppercase at the package level, then it's exported from the package and is globally visible.
+third is block scope. variable declared inside a block remain there and cant be accessed outside of that.
+
+- best practices: 
